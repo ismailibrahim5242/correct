@@ -1,0 +1,17 @@
+.form{
+    margin: auto;
+    margin-top: 50px;
+    border: thin solid blue;
+}
+
+.form-title{
+font-weight: bolder;
+color: rgb(23, 23, 167);
+}
+
+.navbar-brand{
+    color: blue;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-right: 400px;
+}

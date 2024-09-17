@@ -6,7 +6,7 @@ const Nav = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary p-3">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand">
             Zico College
           </a>
           <button
@@ -40,14 +40,14 @@ const Nav = () => {
                 </a>
                 <ul class="dropdown-menu">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Signup">
-                      Signup
+                    <Link className="nav-link" to="/Student">
+                    STUDENT
                     </Link>
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Login">
-                      Login
+                    <Link className="nav-link" to="/Staff">
+                      STAFF
                     </Link>
                   </li>
                 </ul>
