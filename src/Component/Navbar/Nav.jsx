@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo1 from "../../assets/zic logo.png";
 
 const Nav = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary p-3">
-        <div className="container">
-          <a className="navbar-brand">
-            Zico College
-          </a>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <img src={logo1} alt="" className="pic2 ms-5 " />
+        <div className="container-fluid">
           <button
             className="navbar-toggler"
             type="button"
@@ -28,27 +27,23 @@ const Nav = () => {
                 </Link>
               </li>
 
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   data-bs-toggle="dropdown"
                   href="#"
                   role="button"
                   aria-expanded="false"
                 >
-                 Account
+                  Account
                 </a>
-                <ul class="dropdown-menu">
+                <ul className="dropdown-menu">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Student">
-                    STUDENT
-                    </Link>
+                    <Link to="/Signup"> STUDENT </Link>
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Staff">
-                      STAFF
-                    </Link>
+                    <Link to="/AdminSignin">STAFF</Link>
                   </li>
                 </ul>
               </li>

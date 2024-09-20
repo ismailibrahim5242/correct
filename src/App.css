@@ -1,184 +1,174 @@
-/* Sign up styling */ 
-.container {
+/* From Uiverse.io by ammarsaa */ 
+.form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .form_area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-color: #EDDCD9;
-    height: auto;
-    width: auto;
-    border: 2px solid #264143;
+    gap: 10px;
+    max-width: 350px;
+    padding: 20px;
     border-radius: 20px;
-    box-shadow: 3px 4px 0px 1px #E99F4C;
+    position: relative;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
   }
   
   .title {
-    color: #264143;
-    font-weight: 900;
-    font-size: 1.5em;
-    margin-top: 20px;
-  }
-  
-  .sub_title {
+    font-size: 28px;
     font-weight: 600;
-    margin: 5px 0;
-  }
-  
-  .form_group {
+    letter-spacing: -1px;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    margin: 10px;
+    align-items: center;
+    padding-left: 30px;
+    color: #00bfff;
   }
   
-  .form_style {
-    outline: none;
-    border: 2px solid #264143;
-    box-shadow: 3px 4px 0px 1px #E99F4C;
-    width: 290px;
-    padding: 12px 10px;
-    border-radius: 4px;
-    font-size: 15px;
+  .title::before {
+    width: 18px;
+    height: 18px;
   }
   
-  .form_style:focus, .btn:focus {
-    transform: translateY(4px);
-    box-shadow: 1px 2px 0px 0px #E99F4C;
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
   }
   
-  .btn {
-    padding: 15px;
-    margin: 25px 0px;
-    width: 290px;
-    font-size: 15px;
-    background: #DE5499;
+  .title::before,
+  .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #00bfff;
+  }
+  
+  .message, 
+  .signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .signin a {
+    color: #00bfff;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
-    font-weight: 800;
-    box-shadow: 3px 3px 0px 0px #E99F4C;
   }
   
-  .btn:hover {
-    opacity: .9;
+  .form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
   }
   
-  .link {
-    font-weight: 800;
-    color: #264143;
-    padding: 5px;
+  .form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    color: #00bfff;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .input {
+    font-size: medium;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    background-color: #00bfff;
+  }
+  
+  .submit:hover {
+    background-color: #00bfff96;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
   }
 
 
 
-  /* Login*/ 
-.form {
-  background-color: #fff;
-  display: block;
-  padding: 1rem;
-  max-width: 350px;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
-.form-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  text-align: center;
-  color: #000;
-}
+     /* HOME  */
+     .container-fluid{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
 
-.input-container {
-  position: relative;
-}
+     .phone{
+      font-size: 60px;
+      font-weight: 700;
+     }
+     
+     .photo{
+      border: 0;
+      margin-top: 30px;
+      border-radius: 15px;
+     }
 
-.input-container input, .form button {
-  outline: none;
-  border: 1px solid #e5e7eb;
-  margin: 8px 0;
-}
+     /* .flex2{
+      display: flex;
+      justify-content: space-between;
+      border: thick solid red;
+      } */
 
-.input-container input {
-  background-color: #fff;
-  padding: 1rem;
-  padding-right: 3rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  width: 300px;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
 
-.input-container span {
-  display: grid;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  place-content: center;
-}
+     /* NAVBAR */
 
-.input-container span svg {
-  color: #9CA3AF;
-  width: 1rem;
-  height: 1rem;
-}
-
-.submit {
-  display: block;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  background-color: #4F46E5;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  width: 100%;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-}
-
-.signup-link {
-  color: #6B7280;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  text-align: center;
-}
-
-.signup-link a {
-  text-decoration: underline;
-}
-
-.nav-item .nav-link{
- margin:0 10px 0 50px;
- font-size: 15px;
- font-weight: bold;
-}
-
-.container-fluid{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: rgb(211, 51, 211); */
-}
-.phone{
- font-size: 50px;
- font-weight: bolder;
- /* color: #EDDCD9; */
-}
-.Bg{
-  /* height: 30%; */
-  width: 50%;
-}
+     .nav-item .nav-link{
+      margin: 0 10px 0 50px;
+      font-size: 15px;
+      font-weight: bold;
+     }
