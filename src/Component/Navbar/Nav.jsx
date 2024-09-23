@@ -39,17 +39,27 @@ const Nav = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
-                    <Link to="/Signup"> STUDENT </Link>
+                    <Link to="/Signup" id="acct"> STUDENT </Link>
                   </li>
 
                   <li className="nav-item">
-                    <Link to="/AdminSignin">STAFF</Link>
+                    <Link to="/AdminSignin" id="acct">STAFF</Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/About">
                   About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Course">
+                  Course
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Faq">
+                  FAQ
                 </Link>
               </li>
             </ul>

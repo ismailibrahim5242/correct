@@ -158,17 +158,36 @@
       border-radius: 15px;
      }
 
-     /* .flex2{
+     .flex2{
       display: flex;
       justify-content: space-between;
       border: thick solid red;
-      } */
+      }
 
 
      /* NAVBAR */
 
      .nav-item .nav-link{
-      margin: 0 10px 0 50px;
+      margin: 0 10px 0 10px;
       font-size: 15px;
       font-weight: bold;
+      font-family:Georgia, 'Times New Roman', Times, serif ;
+      /* background-color: red; */
+     }
+
+     
+
+     #acct{
+      color: black;
+      font-family:Georgia, 'Times New Roman', Times, serif ;
+      text-decoration: none;
+      margin: auto;
+     }
+
+     .Depart{
+      text-decoration: none;
+      margin: auto;
+      font-family: 'Times New Roman', Times, serif;
+     }.Hdp{
+      text-align: center;
      }

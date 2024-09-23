@@ -6,6 +6,8 @@ import Home from "./Component/Home/Home";
 import Signin from "./Component/Signin/Signin";
 import Signup from "./Component/Signup/Signup";
 import AdminSignin from "./Component/Staff/AdminSignin";
+import Course from "./Component/Course/Course";
+import Faq from "./Component/Faq/Faq";
 function App() {
   return (
     <>
@@ -20,6 +22,9 @@ function App() {
 
         {/* {   STAFF} */}
         <Route path="/AdminSignin" element={<AdminSignin/>} />
+        <Route path="/Course" element={<Course/>} />
+        <Route path="/Faq" element={<Faq/>} />
+       
       </Routes>
     </>
   );
