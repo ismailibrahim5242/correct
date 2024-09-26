@@ -12,6 +12,10 @@
     border: 1px solid #333;
   }
   
+
+  .form-title{
+    margin: auto;
+  }
   .title {
     font-size: 28px;
     font-weight: 600;
@@ -21,6 +25,12 @@
     align-items: center;
     padding-left: 30px;
     color: #00bfff;
+  }
+
+  #inp9{
+    width: 300px;
+    border: 3px;
+    height: 5vh;
   }
   
   .title::before {

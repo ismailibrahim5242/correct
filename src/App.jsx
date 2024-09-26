@@ -8,6 +8,7 @@ import Signup from "./Component/Signup/Signup";
 import AdminSignin from "./Component/Staff/AdminSignin";
 import Course from "./Component/Course/Course";
 import Faq from "./Component/Faq/Faq";
+import Dashboard from "./Component/Dashboard/Dashboard";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/AdminSignin" element={<AdminSignin/>} />
         <Route path="/Course" element={<Course/>} />
         <Route path="/Faq" element={<Faq/>} />
+        <Route path="/Dashboard" element={<Dashboard/>} />
        
       </Routes>
     </>

@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  // Formik hook for managing form state and handling submission
-  const formik = useFormik({
-    initialValues: {
+  
+  const navigate = useNavigate(); // Initialize the navigate hook
+
+  // Function to retrieve data from localStorage
+  const getInitialValues = () => {
+    const savedValues = localStorage.getItem('signupForm');
+    return savedValues ? JSON.parse(savedValues) : {
       firstName: '',
       lastName: '',
       email: '',
       password: '',
       confirmPassword: ''
-    },
+    };
+  };
+
+  // Formik hook for managing form state and handling submission
+  const formik = useFormik({
+    initialValues: getInitialValues(),
     validationSchema: Yup.object({
       firstName: Yup.string().required('First name is required'),
       lastName: Yup.string().required('Last name is required'),
@@ -25,16 +34,28 @@ const Signup = () => {
         .required('Confirm password is required')
     }),
     onSubmit: (values) => {
-      // Handle form submission
+      // Save form data to localStorage on form submission
+      localStorage.setItem('signupForm', JSON.stringify(values));
       alert('Signup successful!');
-      console.log(values);
-    }
+
+      // Redirect to sign-in page
+      navigate('/signin');
+    },
   });
+
+  // Pre-fill form inputs with data from localStorage when the component mounts
+  useEffect(() => {
+    const savedValues = localStorage.getItem('signupForm');
+    if (savedValues) {
+      const parsedValues = JSON.parse(savedValues);
+      formik.setValues(parsedValues);
+    }
+  }, []);
 
   return (
     <>
       <form className="form" onSubmit={formik.handleSubmit}>
-        <p className="title">Register </p>
+        <p className="title">Register</p>
         <p className="message">Signup now and get full access to our app.</p>
         
         <div className="flex">
