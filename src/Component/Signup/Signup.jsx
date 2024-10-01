@@ -41,6 +41,7 @@ const Signup = () => {
       // Redirect to sign-in page
       navigate('/signin');
     },
+    
   });
 
   // Pre-fill form inputs with data from localStorage when the component mounts

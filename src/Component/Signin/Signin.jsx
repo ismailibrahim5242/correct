@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
@@ -12,6 +12,11 @@ const Signin = () => {
     const savedValues = localStorage.getItem('signupForm');
     return savedValues ? JSON.parse(savedValues) : null;
   };
+
+  // Clear input fields on page refresh
+  useEffect(() => {
+    localStorage.removeItem('formik');
+  }, []);
 
   // Formik hook for form state, validation, and handling submission
   const formik = useFormik({
@@ -27,7 +32,7 @@ const Signin = () => {
         .min(6, 'Password must be at least 6 characters')
         .required('Password is required')
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       const savedUserData = getSavedUserData();
 
       // Check if there is any saved data in localStorage
@@ -39,7 +44,7 @@ const Signin = () => {
           alert('Signin successful!');
           navigate('/Dashboard'); // Redirect to dashboard or another page after sign-in
         } else {
-          setErrorMessage('Invalid email or password');
+          setErrorMessage(alert('Invalid email or password'));
         }
       } else {
         setErrorMessage('No user found. Please sign up first.');

@@ -36,7 +36,7 @@ const Home = () => {
           <hr className="bg-white my-4" />
           <div className="row">
             <div className="col-md-3">
-              <h6>She Leads Africa</h6>
+              <h6>Hakanni High Sch</h6>
               <ul className="list-unstyled">
                 <li>
                   <a href="#" className="text-white text-decoration-none">
@@ -127,7 +127,7 @@ const Home = () => {
             </div>
           </div>
           <p className="mt-4">
-            &copy; 2023 SHE LEADS AFRICA, All Rights Reserved.
+            &copy; 2023 Hakanni High School, All Rights Reserved.
           </p>
         </div>
       </section>
