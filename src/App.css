@@ -160,6 +160,8 @@
      .phone{
       font-size: 60px;
       font-weight: 700;
+     color: rgb(13, 13, 170);
+     font-family:Georgia, 'Times New Roman', Times, serif ;
      }
      
      .photo{
@@ -184,6 +186,7 @@
       font-size: 15px;
       font-weight: bold;
       font-family:Georgia, 'Times New Roman', Times, serif ;
+      color:  rgb(13, 13, 170);
       /* background-color: red; */
      }
 
