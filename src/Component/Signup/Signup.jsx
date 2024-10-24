@@ -1,52 +1,65 @@
-import React, { useEffect } from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  
   const navigate = useNavigate(); // Initialize the navigate hook
 
   // Function to retrieve data from localStorage
   const getInitialValues = () => {
-    const savedValues = localStorage.getItem('signupForm');
-    return savedValues ? JSON.parse(savedValues) : {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
-    };
+    const savedValues = localStorage.getItem("signupForm");
+    return savedValues
+      ? JSON.parse(savedValues)
+      : {
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        };
   };
 
   // Formik hook for managing form state and handling submission
   const formik = useFormik({
     initialValues: getInitialValues(),
     validationSchema: Yup.object({
-      firstName: Yup.string().required('First name is required'),
-      lastName: Yup.string().required('Last name is required'),
-      email: Yup.string().email('Invalid email address').required('Email is required'),
+      firstName: Yup.string().required("First name is required"),
+      lastName: Yup.string().required("Last name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
       password: Yup.string()
-        .min(6, 'Password must be at least 6 characters long')
-        .required('Password is required'),
+        .min(6, "Password must be at least 6 characters long")
+        .required("Password is required"),
       confirmPassword: Yup.string()
-        .oneOf([Yup.ref('password'), null], 'Passwords must match')
-        .required('Confirm password is required')
+        .oneOf([Yup.ref("password"), null], "Passwords must match")
+        .required("Confirm password is required"),
     }),
-    onSubmit: (values) => {
-      // Save form data to localStorage on form submission
-      localStorage.setItem('signupForm', JSON.stringify(values));
-      alert('Signup successful!');
+    onSubmit: (values, { setFieldError }) => {
+      // Check if the email already exists in localStorage
+      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+      const isEmailUsed = existingUsers.some(
+        (user) => user.email === values.email
+      );
 
-      // Redirect to sign-in page
-      navigate('/signin');
+      if (isEmailUsed) {
+        setFieldError("email", "Email already used"); // Set error for email field
+      } else {
+        // Save form data to localStorage
+        existingUsers.push(values);
+        localStorage.setItem("users", JSON.stringify(existingUsers));
+
+        alert("Signup successful!");
+        // Redirect to sign-in page
+        navigate("/signin");
+      }
     },
-    
   });
 
   // Pre-fill form inputs with data from localStorage when the component mounts
   useEffect(() => {
-    const savedValues = localStorage.getItem('signupForm');
+    const savedValues = localStorage.getItem("signupForm");
     if (savedValues) {
       const parsedValues = JSON.parse(savedValues);
       formik.setValues(parsedValues);
@@ -58,7 +71,7 @@ const Signup = () => {
       <form className="form" onSubmit={formik.handleSubmit}>
         <p className="title">Register</p>
         <p className="message">Signup now and get full access to our app.</p>
-        
+
         <div className="flex">
           <label>
             <input
@@ -105,7 +118,7 @@ const Signup = () => {
           />
           <span>Email</span>
           {formik.touched.email && formik.errors.email ? (
-            <div className="error">{formik.errors.email}</div>
+            <div className="error-message">{formik.errors.email}</div>
           ) : null}
         </label>
 
@@ -141,7 +154,9 @@ const Signup = () => {
           ) : null}
         </label>
 
-        <button className="submit" type="submit">Submit</button>
+        <button className="submit" type="submit">
+          Submit
+        </button>
 
         <p className="signin">
           Already have an account? <Link to="/signin">Signin</Link>
