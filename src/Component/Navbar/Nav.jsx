@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo1 from "../../assets/zic logo.png";
+import './navbar.css'
 
 const Nav = () => {
   return (

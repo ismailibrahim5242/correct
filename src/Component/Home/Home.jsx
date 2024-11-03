@@ -1,5 +1,6 @@
 import React from "react";
 import body from "../../assets/goto.jpg";
+import './Home.css'
 
 const Home = () => {
   return (
