@@ -60,8 +60,8 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li className="nav-item mx-4">
-                  <Link className="nav-link" to="/Course">
-                    Course
+                  <Link className="nav-link" to="/Project">
+                    Project
                   </Link>
                 </li>
                 <li className="nav-item mx-4">

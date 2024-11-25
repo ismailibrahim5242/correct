@@ -6,10 +6,10 @@ import Home from "./Component/Home/Home";
 import Signin from "./Component/Signin/Signin";
 import Signup from "./Component/Signup/Signup";
 import AdminSignin from "./Component/Staff/AdminSignin";
-import Course from "./Component/Course/Course";
 import Faq from "./Component/Faq/Faq";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import About from "./Component/About/About";
+import Project from "./Component/Project/Project";
 function App() {
   return (
     <>
@@ -24,7 +24,7 @@ function App() {
 
         {/* {   STAFF} */}
         <Route path="/AdminSignin" element={<AdminSignin/>} />
-        <Route path="/Course" element={<Course/>} />
+        <Route path="/Project" element={<Project/>} />
         <Route path="/Faq" element={<Faq/>} />
         <Route path="/Dashboard" element={<Dashboard/>} />
         <Route path="/About" element={<About/>} />

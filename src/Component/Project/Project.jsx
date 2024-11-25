@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Course = () => {
+const Project= () => {
   return (
     <>
     <h3 className='Hdp'>
@@ -24,4 +24,4 @@ const Course = () => {
   )
 }
 
-export default Course
+export default Project
